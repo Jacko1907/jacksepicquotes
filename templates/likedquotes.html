@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Liked Quotes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/likedquotes.css') }}">
+{% endblock head %}
+
+
+
+{% block body %}
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='img/quote.jpg') }}") no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            overflow: hidden;
+        }
+    </style>
+    
+    {% if count < 1 %}
+        <h1 class="header">You do not have any liked quotes!</h1>
+        <div style="text-align: center;">
+            <a role="button" class="btn btn-primary btn-sm" href="{{ url_for('motivationalquote') }}">Show a Quote</a>
+            <br>
+            <br>
+            <a role="button" class="btn btn-primary btn-sm" href="{{ url_for('index') }}">Show Home Page</a>
+        </div>
+    {% else %}
+        <h1 class="header">Here are your liked quotes:</h1>
+        
+        {% for quote in quotes %}
+            <h1 class="center quote"><a href="{{ url_for('motivationalquotespecific', index=quote.index) }}">Liked Quote: {{quote.index}} |</a>   <a class="delete" href="{{ url_for('deletelikedquote', id=quote.id) }}">Delete</a></h1>
+
+        {% endfor %}
+        <br>
+
+
+        <div style="text-align: center;">
+            <a role="button" class="btn btn-primary btn-sm" href="{{ url_for('motivationalquote') }}">Show Another Quote</a>
+            <br>
+            <br>
+            <a role="button" class="btn btn-primary btn-sm" href="{{ url_for('index') }}">Show Home Page</a>
+        </div>
+    {% endif %}
+
+    
+    
+{% endblock body %}

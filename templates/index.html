@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Home Page</title>    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock head %}
+
+{% block body %}
+    <div class="main">
+        <h1 class="centered">This is my homepage!</h1>
+        <a href="{{ url_for('motivationalquote') }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Motivational Quote</a>
+        <br>
+        <br>
+        
+    </div>
+  
+{% endblock body %}

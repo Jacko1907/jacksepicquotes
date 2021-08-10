@@ -1,0 +1,29 @@
+.center{
+    text-align: center;
+}
+
+.header { 
+    text-align: center;
+    color: white;
+    font-size: 3.5vw;
+}
+
+.quote {
+    font-size: 2vw;
+}
+
+.delete {
+    color: tomato;
+}
+
+.delete:hover {
+    color: tomato;
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}

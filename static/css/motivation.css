@@ -1,0 +1,31 @@
+#main {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    
+}
+
+.quotecontent {
+    font-size: 3.5vw;
+}
+
+
+
+.author {
+    margin: 25px;
+    font-size: 2vw;
+}
+
+.author span {
+    font-style: italic;
+    color: rgb(255, 0, 0);
+}
+
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+

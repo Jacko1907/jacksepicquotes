@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Motivational Quote</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/motivation.css') }}">
+{% endblock head %}
+
+
+
+{% block body %}
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='img/quote.jpg') }}") no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            overflow: hidden;
+        }
+    </style>
+    
+
+    <div id="main" class="centered">
+        <h1 class="quotecontent">{{quote.text}}</h1>
+        <h4 class="author">A quote by <span>"{{quote.author}}"</span></h4>
+        <a role="button" class="btn btn-primary btn-sm" href="{{ url_for('likequote', index=index) }}">Like quote?</a>
+        <br>
+        <br>
+        <a role="button" class="btn btn-primary btn-sm" href="{{ url_for('likedquotes') }}">Show liked quotes</a>
+        <br>
+        <br>
+        <a role="button" class="btn btn-primary btn-sm" href="{{ url_for('motivationalquote') }}">Show Another Quote</a>
+        <br>
+        <br>
+        <a role="button" class="btn btn-primary btn-sm" href="{{ url_for('index') }}">Go to Home Page</a>
+
+        
+    </div>
+{% endblock body %}
